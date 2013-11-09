@@ -1,0 +1,47 @@
+<div class="grades form">
+<?php echo $form->create('Grade');?>
+	<fieldset>
+ 		<legend><?php __('Add Grade');?></legend>
+	<?php
+		echo $form->input('name');
+		echo $form->input('description');
+		echo $form->input('school_id');
+	?>
+	</fieldset>
+<?php 
+    echo $ajax->submit('Submit', array('url'=> array('controller'=>'grades', 'action'=>'add'),
+                'update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));
+?>
+</div>
+<div class="actions">
+	<ul>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'view', true).' '.__d('logged', 'grade', true).'s', array('controller' => 'grades', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'view', true).' '.__d('logged', 'school', true).'s', array('controller' => 'schools', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'add', true).' '.__d('logged', 'school', true), array('controller' => 'schools', 'action' => 'add'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'view', true).' '.__d('logged', 'subject', true).'s', array('controller' => 'subjects', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'add', true).' '.__d('logged', 'subject', true), array('controller' => 'subjects', 'action' => 'add'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'view', true).' '.__d('logged', 'section', true).'s', array('controller' => 'sections', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'add', true).' '.__d('logged', 'section', true), array('controller' => 'sections', 'action' => 'add'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+	</ul>
+</div>

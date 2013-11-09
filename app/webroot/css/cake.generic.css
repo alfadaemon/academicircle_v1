@@ -1,0 +1,598 @@
+/* SVN FILE: $Id$ */
+/**
+ *
+ * PHP versions 4 and 5
+ *
+ * CakePHP(tm) :  Rapid Development Framework (http://www.cakephp.org)
+ * Copyright 2005-2010, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @filesource
+ * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ * @link          http://www.cakefoundation.org/projects/info/cakephp CakePHP(tm) Project
+ * @package       cake
+ * @subpackage    cake.app.webroot.css
+ * @since         CakePHP(tm)
+ * @version       $Revision$
+ * @modifiedby    $LastChangedBy$
+ * @lastmodified  $Date$
+ * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
+ */
+
+* {
+	margin:0;
+	padding:0;
+}
+
+/* General Style Info */
+body {
+	background: #FFF; /*#003d4c;*/
+	color: #fff;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size:12px;
+	margin: 0;
+}
+a {
+	color: #003d4c;
+	text-decoration: underline;
+	font-weight: bold;
+        font-size: 11px;
+}
+a:hover {
+	background:#fff;
+	color: #003d4c;
+	text-decoration:none;
+}
+a img {
+	border:none;
+}
+h1, h2, h3, h4 {
+	font-weight: normal;
+}
+h1 {
+	background:#fff;
+	color: #003d4c;
+	font-size: 100%;
+	margin: 0.1em 0;
+}
+h2 {
+	background:#fff;
+	color: #e32;
+	font-size: 120%;
+	margin: 0.3em 0;
+	padding-top: 0.8em;
+}
+h3 {
+	color: #993;
+	font-size: 125%;
+	padding-top: 1.5em;
+}
+h4 {
+	color: #993;
+	font-weight: normal;
+	padding-top: 0.5em;
+}
+ul, li {
+	margin: 0 12px;
+}
+
+/* Layout */
+#container {
+	text-align: left;
+}
+
+#header{
+	padding: 10px 20px;
+}
+
+#headerlogged{
+	padding: 10px 10px;
+	background: #ffffff no-repeat left;
+}
+
+#header h1 {
+	background: #003d4c no-repeat left;
+	color: #fff;
+	padding: 0px 30px;
+	display: inline;
+}
+#header h1 a {
+	color: #fff;
+	background: #003d4c;
+	font-weight: normal;
+	text-decoration: none;
+}
+#header h1 a:hover {
+	color: #fff;
+	background: #003d4c;
+	text-decoration: underline;
+}
+#content{
+	background: #fff;
+	clear: both;
+	color: #333;
+	padding: 10px 20px 40px 20px;
+	overflow: auto;
+	margin: auto 10%;
+}
+#footer {
+	clear: both;
+	padding: 6px 10px;
+	text-align: right;
+}
+
+/* Tables */
+table {
+	background: #fff;
+	border:1px solid #ccc;
+	border-right:0;
+	clear: both;
+	color: #333;
+	margin-bottom: 10px;
+	width: 100%;
+	font-size: 10px;
+}
+th {
+	background: #f2f2f2;
+	border:1px solid #bbb;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	text-align: center;
+        font-size: 10px;
+}
+th a {
+	background:#f2f2f2;
+	display: block;
+	padding: 2px;
+	text-decoration: none;
+        font-size: 10px;
+}
+th a:hover {
+	background: #ccc;
+	color: #333;
+	text-decoration: none;
+}
+table tr td {
+	background: #fff;
+	border-right: 1px solid #ccc;
+	padding: 4px;
+	text-align: left;
+	vertical-align: top;
+        font-size: 8px;
+}
+table tr.altrow td {
+	background: #f4f4f4;
+        font-size: 8px;
+}
+td.actions {
+	text-align: center;
+	white-space: nowrap;
+        font-size: 8px;
+}
+td.actions a {
+	margin: 0px 6px;
+        font-size: 8px;
+}
+tr a{
+    font-size: 9px;
+}
+.cake-sql-log table {
+	background: #f4f4f4;
+}
+.cake-sql-log td {
+	padding: 4px 8px;
+	text-align: left;
+}
+
+/* Paging */
+div.paging {
+	background:#fff;
+	color: #ccc;
+	margin-bottom: 2em;
+	font-size: 80%;
+	text-align: center;
+	width:80%;
+}
+div.paging div.disabled {
+	color: #ddd;
+	display: inline;
+}
+div.paging span {
+}
+div.paging span.current {
+	color: #000;
+}
+div.paging span a {
+}
+
+/* Posts and comments */
+.thread{
+    clear:both;
+    border:1px solid #DBDEE4;
+    margin-top: 10px;
+    padding: 5px;
+    background: #ECEFF5;
+    width: 260px;
+    float:left;
+    text-align: left;
+    font-size: 12px !important;
+    font-weight: normal;
+    overflow: hidden;
+    color: #333;
+}
+
+.thread a{
+    font-weight: bold;
+    color: #3B5998;
+    padding:0px;
+    margin: 0px;
+    outline-style: none;
+    text-decoration:none;
+    display:inline-block;
+    background: #ECEFF5;
+}
+
+.comment{
+    margin-top: 2px;
+    background: #DBDEE4;
+    padding: 5px 5px 5px 10px;
+    font-size:10px;
+    border-bottom:1px solid #E5EAF1;
+}
+
+.comment a{
+    background: #DBDEE4;
+    font-size:10px;
+}
+
+.thread p{
+    color:#777777;
+    padding:2px 0 1px;
+    font-size: 8px;
+}
+
+/**
+ * Navigation
+ */
+#navigation ul { margin: 0px; padding: 0px; list-style: none; }
+#navigation ul li { padding: 2px; margin-left: 3px; background-color: #eee; }
+#navigation ul li a { margin-bottom: 2px; display: block; font-size: 10px; text-decoration: none; color: #464646; }
+
+#navigation ul li ul { margin-left: 0px; background-color: #fff; }
+#navigation ul li ul li { margin-bottom: 2px; background-color: #eee; }
+#navigation ul li ul li a { margin: 1px 3px 1px 3px; display: block; font-size: 14px; font-weight: bold; text-decoration: none; color: #21759B; }
+#navigation ul li ul li a:hover, #navigation ul li ul li a.current { color: #D54E21; }
+
+
+/* Forms */
+form {
+	clear: both;
+	padding: 0;
+	
+}
+fieldset {
+        border:1px dashed #CCCCCC;
+        margin-bottom:10px;
+        margin-top:10px;
+        padding:5px;
+}
+fieldset legend {
+	background:#666666 none repeat scroll 0 0;
+        border:1px solid #333333;
+        color:#FFFFFF;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:90%;
+        font-weight:bold;
+        letter-spacing:-1px;
+        line-height:1.1;
+        padding:2px 6px;
+}
+fieldset fieldset {
+	margin-top: 0px;
+	margin-bottom: 20px;
+	padding: 16px 10px;
+}
+fieldset fieldset legend {
+	font-size: 120%;
+	font-weight: normal;
+}
+fieldset fieldset div {
+	clear: left;
+	margin: 0 20px;
+}
+form div {
+	clear: both;
+	vertical-align: text-top;
+}
+form div.input {
+	color: #444;
+	font-size: 10px;
+}
+form div.required {
+	color: #333;
+	font-weight: bold;
+}
+form div.submit {
+	border: 0;
+	clear: both;
+	margin-bottom: 10px;
+}
+label {
+        background-color:#CCCCCC;
+        color:#666666;
+        display:block;
+        float:left;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:100%;
+        font-weight:normal;
+        height:20px;
+        letter-spacing:-1px;
+        line-height:0.5;
+        margin-right:2px;
+        margin-top:2px;
+        padding-left:6px;
+        padding-top:5px;
+        width:60px;
+}
+input, textarea {
+	clear: both;
+	font-size: 100%;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	padding: 2px;
+	width: 70%;
+        background: #FFF;
+        border: 1px solid #DBDEE4;
+}
+select {
+	clear: both;
+	font-size: 100%;
+	vertical-align: text-bottom;
+        background: #ECEFF5;
+        border: 1px solid #DBDEE4;
+}
+/*select[multiple=multiple] {
+	width: 60%;
+}*/
+option {
+	font-size: 100%;
+	padding: 0 3px;
+}
+input[type=checkbox] {
+	clear: left;
+	float: left;
+	margin: 0px 6px 7px 2px;
+	width: auto;
+        background: #ECEFF5;
+        border: 1px solid #DBDEE4;
+}
+input[type=radio] {
+	float:left;
+	width:auto;
+	margin: 0 3px 7px 0;
+        background: #ECEFF5;
+        border: 1px solid #DBDEE4;
+}
+div.radio label {
+	margin: 0 0 6px 20px;
+}
+input[type=submit] {
+	display: inline;
+	font-size: 9px;
+	padding: 2px;
+	width: auto;
+	vertical-align: bottom;
+        background: #DBDEE4;
+        border: 1px solid #DBDEE4;
+}
+
+/* Notices and Errors */
+div.message {
+	clear: both;
+	color: #900;
+	font-size: 110%;
+	font-weight: bold;
+	margin: 1em 0;
+	background:#FFF6BF none repeat scroll 0 0;
+	border-color:#FFD324;
+	color:#817134;
+}
+div.error-message {
+	clear: both;
+	color: #900;
+	font-weight: bold;
+}
+p.error {
+	background-color: #e32;
+	color: #fff;
+	font-family: Courier, monospace;
+	font-size: 110%;
+	line-height: 110%;
+	padding: 0.8em;
+	margin: 1em 0;
+}
+p.error em {
+	color: #000;
+	font-weight: normal;
+	line-height: 110%;
+}
+div.message {
+	clear: both;
+	color: #900;
+	font-size: 110%;
+	font-weight: bold;
+	margin: 1em 0;
+	background:#FFF6BF none repeat scroll 0 0;
+	border-color:#FFD324;
+	color:#817134;
+}
+.error, .notice, .success, .message {
+border:2px solid #DDDDDD;
+margin-bottom:1em;
+padding:0.8em;
+}
+
+/* Calendar */
+div.date{
+    float: left;
+    padding:3px;
+    color:#EEE;
+    position: relative;
+}
+
+div.days{
+    float: left;
+    margin-top:3px;
+    margin-left: 4px;
+}
+
+/*  Actions  */
+div.actions {
+	width:500px;
+	font-size: 80%;
+}
+
+div.actions ul {
+	margin: 0px 0;
+	padding: 0;
+}
+
+div.actions li {
+	display: inline;
+	list-style-type: none;
+	line-height: 2em;
+	margin: 0 1em 0 0;
+	white-space: nowrap;
+}
+div.actions ul li a {
+	background:#ECEFF5;
+	color: #003d4c;
+	text-decoration: none;
+        -moz-border-radius-bottomleft:3px;
+        -moz-border-radius-bottomright:3px;
+        -moz-border-radius-topleft:3px;
+        -moz-border-radius-topright:3px;
+        border:1px solid #DBDEE4;
+        height:17px;
+        padding-left:6px;
+        padding-right:6px;
+        padding-top:3px;
+        padding-bottom:1px;
+        text-align:center;
+        width:auto;
+}
+div.actions ul li a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+/* Related */
+div.related {
+	clear: both;
+	display: block;
+}
+
+/* Debugging */
+pre {
+	color: #000;
+	background: #f0f0f0;
+	padding: 1em;
+}
+pre.cake-debug {
+	background: #ffcc00;
+	font-size: 120%;
+	line-height: 140%;
+	margin-top: 1em;
+	overflow: auto;
+	position: relative;
+}
+div.cake-stack-trace {
+	background: #fff;
+	border: 4px dotted #ffcc00;
+	color: #333;
+	margin: 0px;
+	padding: 6px;
+	font-size: 120%;
+	line-height: 140%;
+	overflow: auto;
+	position: relative;
+}
+div.cake-code-dump pre {
+	position: relative;
+	overflow: auto;
+}
+div.cake-stack-trace pre, div.cake-code-dump pre {
+	color: #000;
+	background-color: #F0F0F0;
+	margin: 0px;
+	padding: 1em;
+	overflow: auto;
+}
+div.cake-code-dump pre, div.cake-code-dump pre code {
+	clear: both;
+	font-size: 12px;
+	line-height: 15px;
+	margin: 4px 2px;
+	padding: 4px;
+	overflow: auto;
+}
+div.cake-code-dump span.code-highlight {
+	background-color: #ff0;
+	padding: 4px;
+}
+div.code-coverage-results div.code-line {
+	padding-left:5px;
+	display:block;
+	margin-left:10px;
+}
+div.code-coverage-results div.uncovered span.content {
+	background:#ecc;
+}
+div.code-coverage-results div.covered span.content {
+	background:#cec;
+}
+div.code-coverage-results div.ignored span.content {
+	color:#aaa;
+}
+div.code-coverage-results span.line-num {
+	color:#666;
+	display:block;
+	float:left;
+	width:20px;
+	text-align:right;
+	margin-right:5px;
+}
+div.code-coverage-results span.line-num strong {
+	color:#666;
+}
+div.code-coverage-results div.start {
+	border:1px solid #aaa;
+	border-width:1px 1px 0px 1px;
+	margin-top:30px;
+	padding-top:5px;
+}
+div.code-coverage-results div.end {
+	border:1px solid #aaa;
+	border-width:0px 1px 1px 1px;
+	margin-bottom:30px;
+	padding-bottom:5px;
+}
+div.code-coverage-results div.realstart {
+	margin-top:0px;
+}
+div.code-coverage-results p.note {
+	color:#bbb;
+	padding:5px;
+	margin:5px 0 10px;
+	font-size:10px;
+}
+div.code-coverage-results span.result-bad {
+	color: #a00;
+}
+div.code-coverage-results span.result-ok {
+	color: #fa0;
+}
+div.code-coverage-results span.result-good {
+	color: #0a0;
+}

@@ -1,0 +1,79 @@
+<div class="years view">
+<h2><?php  __('Year');?></h2>
+	<dl><?php $i = 0; $class = ' class="altrow"';?>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $year['Year']['id']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $year['Year']['name']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Active'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $year['Year']['active']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('School'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $html->link($year['School']['name'], array('controller' => 'schools', 'action' => 'view', $year['School']['id'])); ?>
+			&nbsp;
+		</dd>
+	</dl>
+</div>
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('Edit Year', true), array('action' => 'edit', $year['Year']['id'])); ?> </li>
+		<li><?php echo $html->link(__('Delete Year', true), array('action' => 'delete', $year['Year']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $year['Year']['id'])); ?> </li>
+		<li><?php echo $html->link(__('List Years', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Year', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Schools', true), array('controller' => 'schools', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New School', true), array('controller' => 'schools', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Sections', true), array('controller' => 'sections', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Section', true), array('controller' => 'sections', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
+<div class="related">
+	<h3><?php __('Related Sections');?></h3>
+	<?php if (!empty($year['Section'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Name'); ?></th>
+		<th><?php __('Grade Id'); ?></th>
+		<th><?php __('Year Id'); ?></th>
+		<th><?php __('School Id'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($year['Section'] as $section):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $section['id'];?></td>
+			<td><?php echo $section['name'];?></td>
+			<td><?php echo $section['grade_id'];?></td>
+			<td><?php echo $section['year_id'];?></td>
+			<td><?php echo $section['school_id'];?></td>
+			<td class="actions">
+				<?php echo $html->link(__('View', true), array('controller' => 'sections', 'action' => 'view', $section['id'])); ?>
+				<?php echo $html->link(__('Edit', true), array('controller' => 'sections', 'action' => 'edit', $section['id'])); ?>
+				<?php echo $html->link(__('Delete', true), array('controller' => 'sections', 'action' => 'delete', $section['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $section['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $html->link(__('New Section', true), array('controller' => 'sections', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>

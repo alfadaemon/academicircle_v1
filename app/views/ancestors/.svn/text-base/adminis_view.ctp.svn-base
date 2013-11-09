@@ -1,0 +1,28 @@
+<div class="ancestors view">
+<h2><?php  __('Ancestor');?></h2>
+	<dl><?php $i = 0; $class = ' class="altrow"';?>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $ancestor['Ancestor']['id']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('User Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $ancestor['Ancestor']['user_id']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Student Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $ancestor['Ancestor']['student_id']; ?>
+			&nbsp;
+		</dd>
+	</dl>
+</div>
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('Edit Ancestor', true), array('action' => 'edit', $ancestor['Ancestor']['id'])); ?> </li>
+		<li><?php echo $html->link(__('Delete Ancestor', true), array('action' => 'delete', $ancestor['Ancestor']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $ancestor['Ancestor']['id'])); ?> </li>
+		<li><?php echo $html->link(__('List Ancestors', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Ancestor', true), array('action' => 'add')); ?> </li>
+	</ul>
+</div>

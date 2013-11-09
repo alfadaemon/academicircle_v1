@@ -1,0 +1,21 @@
+<div class="comment">
+<?php
+    if(isset($comment))
+        echo '<a>'.$comment['User']['fname'].' '.$comment['User']['flname'].'</a> just commented  : '.$comment['Comment']['content'];
+?>
+</div>
+<?php
+    $rnumber = rand();
+    echo $ajax->div('randomDiv'.$rnumber);
+
+    echo $ajax->link($html->image("comment.png", array('alt'=> __('Comment', true) ) ), '#', array('escape'=>false, 'complete'=>'Effect.Appear(\'postComment'.$rnumber.'\')','url'=>'#'),null, false);
+    
+    echo $ajax->div('postComment'.$rnumber, array('style'=>'display:none'));
+    echo $ajax->form('add', 'post',array('url'=>array('controller'=>'comments', 'action'=>'add'), 'Model'=>'Comment', 'update'=>'randomDiv'.$rnumber, 'complete' => 'Effect.Appear(\'randomDiv'.$rnumber.'\')', 'indicator' => 'LoadingDiv'));//, 'style'=>'float:left'));
+    echo $form->input('Comment.content', array('value'=>'', 'label'=>false, 'type'=>'textarea', 'rows'=>2));
+    echo $form->hidden('Comment.post_id', array('value'=>$comment['Post']['id']));
+    echo $form->End('Comment');
+    echo $ajax->divEnd('postComment'.$rnumber);
+
+    echo $ajax->divEnd('randomDiv'.$rnumber);
+?>

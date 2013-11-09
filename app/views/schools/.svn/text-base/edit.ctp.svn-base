@@ -1,0 +1,37 @@
+<div class="schools form">
+<?php echo $form->create('School');?>
+	<fieldset>
+ 		<legend><?php __('Edit School');?></legend>
+	<?php
+		echo $form->input('id');
+		echo $form->input('name');
+		echo $form->input('address');
+		echo $form->input('phone');
+		echo $form->input('logo');
+		echo $form->input('user_id');
+		echo $form->input('active');
+	?>
+	</fieldset>
+<?php 
+    echo $ajax->submit('Submit', array('url'=> array('controller'=>'schools', 'action'=>'edit'),
+                'update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));
+?>
+</div>
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('Delete', true), array('action' => 'delete', $form->value('School.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $form->value('School.id'))); ?></li>
+		<li><?php echo $html->link(__('List Schools', true), array('action' => 'index'));?></li>
+		<li><?php echo $html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Grades', true), array('controller' => 'grades', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Grade', true), array('controller' => 'grades', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Subjects', true), array('controller' => 'subjects', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Subject', true), array('controller' => 'subjects', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Schedules', true), array('controller' => 'schedules', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Schedule', true), array('controller' => 'schedules', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Sections', true), array('controller' => 'sections', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Section', true), array('controller' => 'sections', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Years', true), array('controller' => 'years', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Year', true), array('controller' => 'years', 'action' => 'add')); ?> </li>
+	</ul>
+</div>

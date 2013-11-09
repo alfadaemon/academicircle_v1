@@ -1,0 +1,205 @@
+/* SVN FILE: $Id$ */
+/**
+ *
+ * PHP versions 4 and 5
+ *
+ * CakePHP(tm) :  Rapid Development Framework (http://www.cakephp.org)
+ * Copyright 2005-2010, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @filesource
+ * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
+ * @link          http://www.cakefoundation.org/projects/info/cakephp CakePHP(tm) Project
+ * @package       cake
+ * @subpackage    cake.app.webroot.css
+ * @since         CakePHP(tm)
+ * @version       $Revision$
+ * @modifiedby    $LastChangedBy$
+ * @lastmodified  $Date$
+ * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
+ */
+
+* {
+	margin:0;
+	padding:0;
+}
+
+/* General Style Info */
+body {
+	background: #003d4c;
+	color: #fff;
+	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
+	font-size:90%;
+	margin: 0;
+}
+a {
+	background:#fff;
+	color: #003d4c;
+	text-decoration: underline;
+	font-weight: bold;
+}
+a:hover {
+	background:#fff;
+	color: #003d4c;
+	text-decoration:none;
+}
+a img {
+	border:none;
+}
+h1, h2, h3, h4 {
+	font-weight: normal;
+}
+h1 {
+	background:#fff;
+	color: #003d4c;
+	font-size: 90%;
+	margin: 0.1em 0;
+}
+h2 {
+	background:#fff;
+	color: #000; /* #e32; */
+	font-family:'Gill Sans','lucida grande',helvetica, arial, sans-serif;
+	font-size: 120%;
+	margin: 0.3em 0;
+	padding-top: 0.8em;
+}
+h3 {
+	color: #993;
+	font-family:'Gill Sans','lucida grande',helvetica, arial, sans-serif;
+	font-size: 125%;
+	padding-top: 1.5em;
+}
+h4 {
+	color: #993;
+	font-weight: normal;
+	padding-top: 0.5em;
+}
+h4.with_icon{
+    color: #33557B;
+    padding-left: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+h4.students{
+    -moz-background-clip: border;
+    -moz-background-inline-policiy: continuous;
+    -moz-background-origin: padding;
+    background: transparent no-repeat url("../img/students.gif");
+    vertical-align: middle;
+}
+h4.parents{
+    -moz-background-clip: border;
+    -moz-background-inline-policiy: continuous;
+    -moz-background-origin: padding;
+    background: transparent no-repeat url("../img/parents.gif");
+    vertical-align: middle;
+}
+h4.teachers{
+    -moz-background-clip: border;
+    -moz-background-inline-policiy: continuous;
+    -moz-background-origin: padding;
+    background: transparent no-repeat url("../img/teachers.gif");
+    vertical-align: middle;
+}
+
+ul, li {
+	margin: 0 12px;
+}
+
+/* Layout */
+#container {
+	text-align: left;
+}
+
+#header{
+	padding: 10px 20px;
+	margin: auto 110px;
+}
+
+#header h1 {
+	background: #003d4c no-repeat left;
+	color: #fff;
+	padding: 0px 30px;
+	display: inline;
+}
+#header h1 a {
+	color: #fff;
+	background: #003d4c;
+	font-weight: normal;
+	text-decoration: none;
+        font-size: 90%;
+}
+#header h1 a:hover {
+	color: #fff;
+	background: #003d4c;
+	text-decoration: underline;
+}
+#content{
+	background: #fff;
+	clear: both;
+	color: #333;
+	padding: 20px 40px 20px;
+	overflow: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+#footer {
+	clear: both;
+	padding: 6px 10px;
+	text-align: right;
+}
+
+/* form  */
+form {
+    float:right;
+    margin-bottom:1em;
+    border: 0px none;
+    width: 450px;
+}
+input.text {
+    background:#FFFFFF;
+    border-color:#7C7C7C #C3C3C3 #DDDDDD;
+    border-style:solid;
+    width:100px;
+    border: 0px;
+}
+label{
+    padding: 5px;
+}
+#login {
+    background-color:#003D4C;
+    border:0 none;
+    color:#FFF;
+    font-family:Verdana;
+    font-size:10px;
+    text-align:right;
+    vertical-align:text-top;
+}
+
+#login .theSubmit{
+    background-color:#333333;
+    color:#FFFFFF;
+    font-family:Verdana;
+    font-size:10px;
+    margin-left:5px;
+    border:1px solid #333;
+}
+
+div.message {
+background:#FFF6BF none repeat scroll 0 0;
+border-color:#FFD324;
+clear:both;
+color:#817134;
+font-size:110%;
+font-weight:bold;
+margin:1em 0;
+}
+
+.error, .notice, .success, .message {
+border:2px solid #DDDDDD;
+margin-bottom:1em;
+padding:0.8em;
+}

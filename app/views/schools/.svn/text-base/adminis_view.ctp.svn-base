@@ -1,0 +1,282 @@
+<div class="schools view">
+<h2><?php  __('School');?></h2>
+	<dl><?php $i = 0; $class = ' class="altrow"';?>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $school['School']['id']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $school['School']['name']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Address'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $school['School']['address']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Phone'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $school['School']['phone']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Logo'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $school['School']['logo']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('User'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $html->link($school['User']['id'], array('controller' => 'users', 'action' => 'view', $school['User']['id'])); ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Active'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $school['School']['active']; ?>
+			&nbsp;
+		</dd>
+	</dl>
+</div>
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('Edit School', true), array('action' => 'edit', $school['School']['id'])); ?> </li>
+		<li><?php echo $html->link(__('Delete School', true), array('action' => 'delete', $school['School']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $school['School']['id'])); ?> </li>
+		<li><?php echo $html->link(__('List Schools', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New School', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Grades', true), array('controller' => 'grades', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Grade', true), array('controller' => 'grades', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Matters', true), array('controller' => 'matters', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Matter', true), array('controller' => 'matters', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Schedules', true), array('controller' => 'schedules', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Schedule', true), array('controller' => 'schedules', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Sections', true), array('controller' => 'sections', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Section', true), array('controller' => 'sections', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Years', true), array('controller' => 'years', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Year', true), array('controller' => 'years', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
+<div class="related">
+	<h3><?php __('Related Grades');?></h3>
+	<?php if (!empty($school['Grade'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Name'); ?></th>
+		<th><?php __('Description'); ?></th>
+		<th><?php __('School Id'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($school['Grade'] as $grade):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $grade['id'];?></td>
+			<td><?php echo $grade['name'];?></td>
+			<td><?php echo $grade['description'];?></td>
+			<td><?php echo $grade['school_id'];?></td>
+			<td class="actions">
+				<?php echo $html->link(__('View', true), array('controller' => 'grades', 'action' => 'view', $grade['id'])); ?>
+				<?php echo $html->link(__('Edit', true), array('controller' => 'grades', 'action' => 'edit', $grade['id'])); ?>
+				<?php echo $html->link(__('Delete', true), array('controller' => 'grades', 'action' => 'delete', $grade['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $grade['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $html->link(__('New Grade', true), array('controller' => 'grades', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php __('Related Matters');?></h3>
+	<?php if (!empty($school['Matter'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Name'); ?></th>
+		<th><?php __('Grade Id'); ?></th>
+		<th><?php __('School Id'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($school['Matter'] as $matter):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $matter['id'];?></td>
+			<td><?php echo $matter['name'];?></td>
+			<td><?php echo $matter['grade_id'];?></td>
+			<td><?php echo $matter['school_id'];?></td>
+			<td class="actions">
+				<?php echo $html->link(__('View', true), array('controller' => 'matters', 'action' => 'view', $matter['id'])); ?>
+				<?php echo $html->link(__('Edit', true), array('controller' => 'matters', 'action' => 'edit', $matter['id'])); ?>
+				<?php echo $html->link(__('Delete', true), array('controller' => 'matters', 'action' => 'delete', $matter['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $matter['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $html->link(__('New Matter', true), array('controller' => 'matters', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php __('Related Schedules');?></h3>
+	<?php if (!empty($school['Schedule'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('School Id'); ?></th>
+		<th><?php __('Matter Id'); ?></th>
+		<th><?php __('Section Id'); ?></th>
+		<th><?php __('Teacher Id'); ?></th>
+		<th><?php __('Starts'); ?></th>
+		<th><?php __('Ends'); ?></th>
+		<th><?php __('Monday'); ?></th>
+		<th><?php __('Tuesday'); ?></th>
+		<th><?php __('Wednesday'); ?></th>
+		<th><?php __('Thursday'); ?></th>
+		<th><?php __('Friday'); ?></th>
+		<th><?php __('Saturday'); ?></th>
+		<th><?php __('Sunday'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($school['Schedule'] as $schedule):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $schedule['id'];?></td>
+			<td><?php echo $schedule['school_id'];?></td>
+			<td><?php echo $schedule['matter_id'];?></td>
+			<td><?php echo $schedule['section_id'];?></td>
+			<td><?php echo $schedule['teacher_id'];?></td>
+			<td><?php echo $schedule['starts'];?></td>
+			<td><?php echo $schedule['ends'];?></td>
+			<td><?php echo $schedule['monday'];?></td>
+			<td><?php echo $schedule['tuesday'];?></td>
+			<td><?php echo $schedule['wednesday'];?></td>
+			<td><?php echo $schedule['thursday'];?></td>
+			<td><?php echo $schedule['friday'];?></td>
+			<td><?php echo $schedule['saturday'];?></td>
+			<td><?php echo $schedule['sunday'];?></td>
+			<td class="actions">
+				<?php echo $html->link(__('View', true), array('controller' => 'schedules', 'action' => 'view', $schedule['id'])); ?>
+				<?php echo $html->link(__('Edit', true), array('controller' => 'schedules', 'action' => 'edit', $schedule['id'])); ?>
+				<?php echo $html->link(__('Delete', true), array('controller' => 'schedules', 'action' => 'delete', $schedule['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $schedule['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $html->link(__('New Schedule', true), array('controller' => 'schedules', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php __('Related Sections');?></h3>
+	<?php if (!empty($school['Section'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Name'); ?></th>
+		<th><?php __('Grade Id'); ?></th>
+		<th><?php __('Year Id'); ?></th>
+		<th><?php __('School Id'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($school['Section'] as $section):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $section['id'];?></td>
+			<td><?php echo $section['name'];?></td>
+			<td><?php echo $section['grade_id'];?></td>
+			<td><?php echo $section['year_id'];?></td>
+			<td><?php echo $section['school_id'];?></td>
+			<td class="actions">
+				<?php echo $html->link(__('View', true), array('controller' => 'sections', 'action' => 'view', $section['id'])); ?>
+				<?php echo $html->link(__('Edit', true), array('controller' => 'sections', 'action' => 'edit', $section['id'])); ?>
+				<?php echo $html->link(__('Delete', true), array('controller' => 'sections', 'action' => 'delete', $section['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $section['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $html->link(__('New Section', true), array('controller' => 'sections', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php __('Related Years');?></h3>
+	<?php if (!empty($school['Year'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Name'); ?></th>
+		<th><?php __('Active'); ?></th>
+		<th><?php __('School Id'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($school['Year'] as $year):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $year['id'];?></td>
+			<td><?php echo $year['name'];?></td>
+			<td><?php echo $year['active'];?></td>
+			<td><?php echo $year['school_id'];?></td>
+			<td class="actions">
+				<?php echo $html->link(__('View', true), array('controller' => 'years', 'action' => 'view', $year['id'])); ?>
+				<?php echo $html->link(__('Edit', true), array('controller' => 'years', 'action' => 'edit', $year['id'])); ?>
+				<?php echo $html->link(__('Delete', true), array('controller' => 'years', 'action' => 'delete', $year['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $year['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $html->link(__('New Year', true), array('controller' => 'years', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>

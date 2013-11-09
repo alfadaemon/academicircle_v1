@@ -1,0 +1,32 @@
+<div class="schools form">
+<?php echo $form->create('School');?>
+	<fieldset>
+ 		<legend><?php __('Add School');?></legend>
+	<?php
+		echo $form->input('name');
+		echo $form->input('address');
+		echo $form->input('phone');
+		echo $form->input('logo');
+		echo $form->input('user_id');
+		echo $form->input('active');
+	?>
+	</fieldset>
+<?php echo $form->end('Submit');?>
+</div>
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('List Schools', true), array('action' => 'index'));?></li>
+		<li><?php echo $html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Grades', true), array('controller' => 'grades', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Grade', true), array('controller' => 'grades', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Matters', true), array('controller' => 'matters', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Matter', true), array('controller' => 'matters', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Schedules', true), array('controller' => 'schedules', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Schedule', true), array('controller' => 'schedules', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Sections', true), array('controller' => 'sections', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Section', true), array('controller' => 'sections', 'action' => 'add')); ?> </li>
+		<li><?php echo $html->link(__('List Years', true), array('controller' => 'years', 'action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Year', true), array('controller' => 'years', 'action' => 'add')); ?> </li>
+	</ul>
+</div>

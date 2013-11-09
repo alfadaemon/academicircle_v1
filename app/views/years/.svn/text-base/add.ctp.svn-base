@@ -1,0 +1,39 @@
+<div class="years form">
+<?php echo $form->create('Year');?>
+	<fieldset>
+ 		<legend><?php __('Add Year');?></legend>
+	<?php
+		echo $form->input('name');
+		echo $form->input('active');
+		echo $form->input('school_id', array('options'=>$schools));
+	?>
+	</fieldset>
+<?php 
+    echo $ajax->submit('Submit', array('url'=> array('controller'=>'years', 'action'=>'add'),
+                'update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));
+?>
+</div>
+<div class="actions">
+	<ul>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'view', true).' '.__d('logged', 'year', true).'s', array('controller' => 'years', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'view', true).' '.__d('logged', 'school', true).'s', array('controller' => 'schools', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'add', true).' '.__d('logged', 'school', true), array('controller' => 'schools', 'action' => 'add'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'view', true).' '.__d('logged', 'section', true).'s', array('controller' => 'sections', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+		<li>
+            <?php echo $ajax->link( __d('logged', 'add', true).' '.__d('logged', 'section', true), array('controller' => 'sections', 'action' => 'index'),
+                array('update' => 'editArea', 'indicator' => 'LoadingDiv', 'complete' => 'Effect.Appear(\'editArea\')'));?>
+        </li>
+	</ul>
+</div>

@@ -1,0 +1,28 @@
+<div class="students view">
+<h2><?php  __('Student');?></h2>
+	<dl><?php $i = 0; $class = ' class="altrow"';?>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $student['Student']['id']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('User Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $student['Student']['user_id']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Section Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $student['Student']['section_id']; ?>
+			&nbsp;
+		</dd>
+	</dl>
+</div>
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('Edit Student', true), array('action' => 'edit', $student['Student']['id'])); ?> </li>
+		<li><?php echo $html->link(__('Delete Student', true), array('action' => 'delete', $student['Student']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $student['Student']['id'])); ?> </li>
+		<li><?php echo $html->link(__('List Students', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $html->link(__('New Student', true), array('action' => 'add')); ?> </li>
+	</ul>
+</div>
