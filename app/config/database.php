@@ -81,11 +81,11 @@ class DATABASE_CONFIG {
 	var $default = array(
 		'driver' => 'mysqli',
 		'persistent' => true,
-		'host' => 'db1915.perfora.net',
+		'host' => '',
 		'port' => 3306,
-		'login' => 'dbo289353521',
-		'password' => 'ykNGqUQt',
-		'database' => 'db289353521',
+		'login' =>'', 
+		'password' => '',
+		'database' => '',
 		'encoding' => 'utf8'
 	);
 }
